@@ -1,54 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-// Fazer tratamento de erro caso o cep esteja errado
-
-
-// export default function App(){
-//   const [nome, setNome] = useState("Dan")
-//   const [num, setNum] = useState(0);
-
-//   const trocaNome = () => {
-//     setNome(nome === "Dan" ? "Marlon": "Dan")
-//   }
-
-//   return (
-//     <div>
-//       <h1>{nome}</h1>
-//       <button onClick={trocaNome}>Clica ai</button> <br/>
-//       <button onClick={()=> {setNum(num+1)}}>+</button>
-//         <p>{num}</p>
-//       <button onClick={()=> {setNum(num-1)}}>-</button>
-//     </div>
-//   )
-// }
-
-// export default class App extends React.Component {
-//   state = {
-//     num: 0,
-//   };
-
-//   addNum = () => {
-//     this.setState((dan) => ({
-//       num: dan.num < 13 ? dan.num + 1 : dan.num,
-//     }));
-//   };
-//   removeNum = () => {
-//     this.setState((dai) => ({
-//       num: dai.num > 0 ? dai.num - 1 : dai.num,
-//     }));
-//   };
-//   render() {
-//     return (
-//       <>
-//         <button onClick={this.addNum}>+</button>
-//         <p>{this.state.num}</p>
-//         <button onClick={this.removeNum}>-</button>
-//       </>
-//     );
-//   }
-// }
-
 export default function App() {
   const [cep, setCep] = useState();
   const [rua, setRua] = useState('');
@@ -70,7 +22,10 @@ export default function App() {
 
   return (
     <form onSubmit={(e) => e.preventDefault()}>
-      <h1>Busca CEP</h1>
+      <img
+        src="https://www.logomaker.com/api/main/images/1j+ojVVCOMkX9Wyrexe4hGfby7XT...Qw87X7bizxmfGwQoQJkmSErhPtt8vUtb0NZoBRejhUJd8U5jSBzUIAD3UQ6oXbQZs4AVn8="
+        alt=""
+      />
       <input
         onChange={(e) => {
           setCep(e.target.value);
