@@ -34,15 +34,23 @@ margin-left: 42%;
 const Main = styled.div`
 display:flex;
 flex-direction: column;
-justify-content:space-evenly;
+justify-content:space-between;
 align-items:flex-start;
-height:50vh;
+height:40vh;
 width:100%;
 padding-left:15%;
 h1{
   font-size:2.5vh;
   font-weight:400;
   color:#0C2A78;
+  margin-top:3vh;
+}
+@media(max-width:768px){
+  padding-left:0;
+  h1{
+    font-size:2.5vw;
+    padding-left:15%;
+  }
 }
 `
 const Form = styled.form`
@@ -55,6 +63,9 @@ input{
   border: solid 1px #0C2A78;
   border-radius:4px;
   outline:none;
+  @media(max-width:768px){
+    width:50vw;
+  }
 }
 button{
   padding:7px 20px;
