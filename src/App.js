@@ -129,7 +129,7 @@ export default function App() {
       <div class="content">
       <Form onSubmit={busca}>
         <label for="label">Digite um CEP:</label> <br/>
-        <input required id="label"
+        <input placeholder="Digite apenas números" required id="label"
           onChange={(e) => {
             setCep(e.target.value);
           }}
