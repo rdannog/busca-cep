@@ -5,42 +5,14 @@
   list-style:none;
   text-decoration: none;
 }
-.container-menu{
-  margin-bottom: 4vh;
-  margin-left: 3vw;
-}
+
 input[type="checkbox"]{
   display: none;
 }
 input[type="checkbox"]:checked ~ nav{
-  transform: translateX(270px);
-}
-.nav-menu{
-  width:270px;
-  position:absolute;
-  left:-270px;
-  transition: all 0.5s;
+  transform: translateX(200px);
 }
 
-.nav-menu ul{
-  position: absolute;
-  top:8vh;
-  width: 100%;
-}
-a{  
-  height:30px;
-  display: flex;
-  align-items: center;
-  text-align:center;
-  padding-left:20px;
-  color:white;
-  text-transform: capitalize;
-  background-color: #0C2A78;
-}
-a:hover{
-  background-color: #3f5faf;
-  color: gold;
-}
 .label img{
   width: 5vw;
 }
