@@ -105,6 +105,42 @@ button{
   border-radius: 5px;
 }
 `
+const Label = styled.label`
+padding:0.1vw;
+  position: absolute;
+  z-index: 1;
+  img{
+    width: 5vw;
+  }
+`
+const Content = styled.div`
+display: flex;
+  justify-content: space-between;
+  align-items:center;
+  width: 100%;
+  p {
+    margin-bottom: 1vh;
+  }
+  @media(max-width:768px){
+    flex-direction: column;
+    height: 60vh;
+   padding-top: 5vh;
+   align-items: center;
+  }
+`
+
+const Result = styled.div`
+width:30%;
+  margin-right: 10%;
+  padding:25px 0 20px 15px ;
+  border:2px solid #3f5faf;
+  border-radius: 5px;
+  @media(max-width:768px){
+    margin-top: 5vh;
+    margin-right: 0rem;
+    width:50vw;
+  }
+`
 export default function App() {
   const [cep, setCep] = useState();
   const [rua, setRua] = useState('');
@@ -135,9 +171,9 @@ export default function App() {
      <Header>
      <Menu>
         <input type="checkbox" id="check"/>
-        <label class="label" for="check">
+        <Label for="check">
           <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 172 172" style={{ cursor:"pointer"}}><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style={{mixBlendMode: "normal"}}><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#0C2A78"><path d="M14.33333,35.83333v14.33333h143.33333v-14.33333zM14.33333,78.83333v14.33333h143.33333v-14.33333zM14.33333,121.83333v14.33333h143.33333v-14.33333z"></path></g></g></svg>
-       </label>
+       </Label>
         <Nav>
           <ul>
             <li><a href="#">link 1</a></li>
@@ -156,7 +192,7 @@ export default function App() {
       <h1>Busca por Código de Endereçamento Postal Brasileiro</h1>
       
 
-      <div class="content">
+      <Content>
       <Form onSubmit={busca}>
         <label for="label">Digite um CEP:</label> <br/>
         <input placeholder="Digite apenas números" required id="label"
@@ -168,15 +204,15 @@ export default function App() {
         <button>Buscar</button>
       </Form>
 
-      <div class="result">
+      <Result>
         <p>Rua: {rua}</p>
         <p>Bairro: {bairro}</p>
         <p>Cidade: {cidade}</p>
         <p>Estado: {estado}</p>
         <p>DDD: {ddd}</p>
         <p>CEP: {cep}</p>
-      </div>
-      </div>
+      </Result>
+      </Content>
     </Main>
     </Container>
     </>
