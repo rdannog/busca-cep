@@ -148,9 +148,10 @@ export default function App() {
   const [cidade, setCidade] = useState('');
   const [estado, setEstado] = useState('');
   const [ddd, setDdd] = useState();
+  const [erro, setErro] = useState(false)
 
   const busca = (e) => {
-    axios.get(`https://viacep.com.br/ws/${cep}/json/`).then((response) => {
+      axios.get(`https://viacep.com.br/ws/${cep}/json/`).then((response) => {
       console.log(response);
       setRua(response.data.logradouro);
       setBairro(response.data.bairro);
@@ -158,8 +159,9 @@ export default function App() {
       setEstado(response.data.uf);
       setDdd(response.data.ddd);
       setCep(cep)
-
-    });
+    }).catch(
+      setErro(true)
+    )
     e.preventDefault()
   };
 
@@ -204,14 +206,17 @@ export default function App() {
         <button>Buscar</button>
       </Form>
 
-      <Result>
+      {erro ?
+        (<Result>
         <p>Rua: {rua}</p>
         <p>Bairro: {bairro}</p>
         <p>Cidade: {cidade}</p>
         <p>Estado: {estado}</p>
         <p>DDD: {ddd}</p>
         <p>CEP: {cep}</p>
-      </Result>
+      </Result>):
+      (<Result>Digite um CEP válido</Result>)
+      }
       </Content>
     </Main>
     </Container>
